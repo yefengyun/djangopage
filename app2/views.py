@@ -9,7 +9,8 @@ from app2 import htmlgen
 def index(request, page):
     page = common.string_int(page, 1)
 
-    per_item = 5
+    cookies = request.COOKIES
+    per_item = common.string_int(cookies['page_num'], 5)
     datas = Host.objects.all()
     count = datas.count()
 

@@ -50,9 +50,14 @@
     <option value="20">20</option>
 </select>
 <script>
+    $(function(){
+        var per_item=$.cookie("page_num");
+        if(per_item){
+            $('#select').val(per_item)
+        }
+    })
     function changePage(page){
         var value=$(page).val();
-        $("#select").val=value;
         $.cookie("page_num",value,{path:'/'});
     }
 </script>
