@@ -51,4 +51,4 @@ def index(request, *args, **kwargs):
     htmlstr = htmlgen.gen_html(page, allpage, '/app2/index', 5)
 
     ret = {'data': data, 'count': count, 'htmllist': htmlstr}
-    return render(request, 'index2.html', ret)
+    return render(request, 'app2/index2.html', ret)

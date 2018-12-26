@@ -20,11 +20,11 @@ def index(request):
             # ret['error'] = firstErrorMsg
             ret['data'] = checkForm
 
-    return render(request, 'index.html', ret)
+    return render(request, 'app1/index.html', ret)
 
 
 def ajaxview(request):
-    return render(request, 'testajax.html', {})
+    return render(request, 'app1/testajax.html', {})
 
 
 def ajaxresp(request):
