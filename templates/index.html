@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页</title>
+  </head>
+<body>
+<h1>主页</h1>
+<form action="/app1/" method="post">
+    {%csrf_token%}
+    <div>username:{{data.username}}<span style="color:red">{{data.errors.username.0}}</span></div>
+    <div>email:{{data.email}}<span style="color:red">{{data.errors.email.0}}</span></div>
+    <div>ip:{{data.ip}} <span style="color:red">{{data.errors.ip.0}}</span></div>
+    <div>
+        <input type="submit" value="提交">
+    </div>
+</form>
+</body>
+</html>

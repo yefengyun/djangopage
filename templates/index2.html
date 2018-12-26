@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>分页</title>
+    <script src="/static/js/jquery-3.3.1.js"></script>
+    <script src="/static/js/jquery.cookie.js"></script>
+    <style>
+        table,
+        table tr th,
+        table tr td {
+            border: 1px solid #0094ff;
+        }
+
+        table {
+            width: 200px;
+            min-height: 25px;
+            line-height: 25px;
+            text-align: center;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+
+<body>
+<h1>主机性息</h1>
+<p>主机总数:{{count}}</p>
+<table>
+    <tr>
+        <th>主键</th>
+        <th>主机名</th>
+        <th>ip</th>
+    </tr>
+    {% for item in data %}
+    <tr>
+        <td>{{item.id}}</td>
+        <td>{{item.HostName}}</td>
+        <td>{{item.IP}}</td>
+    </tr>
+    {% endfor %}
+</table>
+<div>
+    {{htmllist}}
+</div>
+<select id="select" onchange="changePage(this)">
+    <option value="5">5</option>
+    <option value="10">10</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+</select>
+<script>
+    function changePage(page){
+        var value=$(page).val();
+        $("#select").val=value;
+        $.cookie("page_num",value,{path:'/'});
+    }
+</script>
+</body>
+
+</html>

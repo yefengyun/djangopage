@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>ajax请求</title>
+    <script src="/static/js/jquery-3.3.1.js"></script>
+</head>
+
+<body>
+<div>
+    输入：<input type="text" id="inputtxt"><br>
+    <input type="button" id="btn" value="点击请求ajax"><br>
+    <p id="p"></p>
+    <script>
+            $(document).ready(function () {
+                $('#btn').click(function () {
+                    var temp = $('#inputtxt').val()
+                    $.ajax({
+                        url: '/app1/ajaxresp/',
+                        type: 'POST',
+                        dataType:'json',
+                        data: { dat: temp },
+                        success: function (arg) {
+                            <!--var obj=jQuery.parseJSON(arg)-->
+                            $("#p").html(arg.msg)
+                        },
+                        error: function () {
+                            console.log("error")
+                        }
+                    })
+                })
+            })
+
+    </script>
+</div>
+</body>
+
+</html>
