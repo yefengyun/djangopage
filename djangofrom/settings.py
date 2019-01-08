@@ -82,7 +82,16 @@ DATABASES = {
         'USER': 'root',
         'PASSWORD': '123456',
         'CHARSET': 'utf-8',
-    }
+    },
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'djangofrom',
+    #     'HOST': 'localhost',
+    #     'PORT': '3306',
+    #     'USER': 'root',
+    #     'PASSWORD': '123456',
+    #     'CHARSET': 'utf-8',
+    # }
 }
 
 # Password validation
@@ -126,3 +135,12 @@ STATICFILES_DIRS = [
 
 MEDIA_ROOT = 'media/'
 MEDIA_URL = 'media/'
+
+# 邮件配置
+EMAIL_HOST = "smtp.163.com"  # 服务器
+EMAIL_PORT = 25  # 一般情况下都为25
+EMAIL_HOST_USER = "yefengyun241@163.com"  # 账号
+EMAIL_HOST_PASSWORD = "zxcvbnm123"  # 密码
+EMAIL_USE_TLS = False  # 一般都为False
+EMAIL_FROM = EMAIL_HOST_USER  # 邮箱来自
+
